@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_interpolation_to_compose_strings
 
 import 'dart:convert';
 
@@ -229,7 +229,7 @@ class _HomePageState extends State<HomePage> {
       leading: Container(
         margin: EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: Colors.grey,
+          color: Colors.grey.shade800,
           borderRadius: BorderRadius.circular(50),
         ),
         child: IconButton(
@@ -255,7 +255,7 @@ class _HomePageState extends State<HomePage> {
           alignment: Alignment.center,
           width: 37,
           decoration: BoxDecoration(
-            color: Colors.grey,
+            color: Colors.grey.shade800,
             borderRadius: BorderRadius.circular(50),
           ),
           child: IconButton(

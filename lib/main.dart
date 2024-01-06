@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:messenger/pages/box_chat.dart';
 import 'package:messenger/pages/home_page.dart';
 
 void main() {

@@ -5,6 +5,7 @@ import 'package:messenger/components/icon_component.dart';
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:messenger/pages/receive_profile.dart';
 
 class BoxChat extends StatefulWidget {
   final int user_id;
@@ -112,33 +113,47 @@ class _BoxChatState extends State<BoxChat> {
     final userInformation = user[0]['user_information_id'];
     return AppBar(
       backgroundColor: Theme.of(context).primaryColor,
-      title: Row(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(50),
-            child: Container(
-              height: 30,
-              width: 30,
-              child: Image.asset(
-                'assets/images/avatar_images/' +
-                    userInformation['user_avatar_path'],
-                fit: BoxFit.cover,
+      title: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) {
+                return ReceiveProfile(
+                  user: user,
+                );
+              },
+            ),
+          );
+        },
+        child: Row(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(50),
+              child: Container(
+                height: 30,
+                width: 30,
+                child: Image.asset(
+                  'assets/images/avatar_images/' +
+                      userInformation['user_avatar_path'],
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          ),
-          SizedBox(
-            width: 10,
-          ),
-          Expanded(
-            child: Text(
-              userInformation['user_name'],
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.white,
+            SizedBox(
+              width: 10,
+            ),
+            Expanded(
+              child: Text(
+                userInformation['user_name'],
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.white,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       actions: [
         IconComponent(
