@@ -101,7 +101,7 @@ class _BoxChatState extends State<BoxChat> {
               ],
             ),
             SizedBox(
-              height: 10,
+              height: 12,
             ),
           ],
         ),
